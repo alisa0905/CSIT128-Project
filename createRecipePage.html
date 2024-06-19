@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Create Recipe</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="stylesheet.css">
+    <link rel="icon" type="image/x-icon" href="images/quisinelogo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
+    <style>
+        .inline-section {
+            display: inline-block;
+            vertical-align: top;
+            margin-right: 20px;
+        }
+        table {
+            width: 100%;
+        }
+        td {
+            padding: 5px;
+        }
+        label{
+            font-family: "Roboto Mono", monospace;
+            font-size: 20px;
+        }
+        input{
+            border: 2px solid black;
+            border-radius: 3%;
+            padding: 5px;
+        }
+        textarea{
+            border: 2px solid black;
+            border-radius: 5%;
+            min-width: 40px;
+            width:90%;
+            margin-top: 20px;
+            padding:20px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <img class="logoImg" src="images/bigQuisineLogo.png">
+
+        <div class="navLinks">
+            <a style="padding:10px 35px;background-color: #E0F8E8;" class="cuteLink" href="homepage.html">HOME</a>
+            <a class="cuteLink" href="recipePage.html">RECIPES</a> 
+        </div>
+        <div class="rightIcons">
+        <a href="some js bs"><img class="headerImg" src="images/nightModeIcon.png" alt="nightmode"></a>
+        <a href="registerPage.html"><img class="headerImg" src="images/profileIcon.png" alt="profile icon"></a>
+        </div>
+    </header>
+    <!--SITE CONTENT STARTS HERE----------------------------------------------------------------------------------->
+    <div class="body" style="height:1100px">
+
+        <div class="addRecipeSection">
+            <div class="addRecipeHeaderLine">
+                <h3 class="quoteStorageLine" style="font-size: 40px;">create recipe</h3>
+            </div>
+            <div style="padding:20px;">
+                <form action="">
+                    <h2>recipe name</h2>
+                    <input type="text">
+                    <br><br>
+                    <div class="inline-section">
+                        <div class="section-header">select tags</div>
+                        <label class="container">dessert
+                            <input type="radio" name="tags" id="dessert">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="container">main course
+                            <input type="radio" name="tags" id="mainCourse">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="container">side dish
+                            <input type="radio" name="tags" id="sideDish">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                    <div class="inline-section">
+                        <div class="section-header">select cuisine</div>
+                        <label class="container">indian
+                            <input type="radio" name="cuisine" id="indian">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="container">russian
+                            <input type="radio" name="cuisine" id="russian">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="container">greek
+                            <input type="radio" name="cuisine" id="greek">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="container">italian
+                            <input type="radio" name="cuisine" id="italian">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="container">chinese
+                            <input type="radio" name="cuisine" id="chinese">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                    <h2>enter your recipe here</h2>
+                    <textarea name="recipeBody" id="recipeBody" rows="30"></textarea>
+                    <br><br>
+                    <input type="submit" value="Submit">
+                    &
+                    <input type="reset" value="Reset">
+                </form>
+            </div>
+        </div>
+
+        <div class="previewSection">
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        </div>
+    </div>
+</body>
+</html>
