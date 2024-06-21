@@ -11,6 +11,72 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
+    <style>
+        .decorImage{
+            height: 100%;
+            float:left;
+            border-radius: 20px;
+            border: 3px solid black;
+        }
+                /* Container styles */
+        .scrolling-text-container {
+            overflow: hidden;
+            margin-right: 10px;
+        }
+
+        /* Inner container styles */
+        .scrolling-text-inner {
+            float:right;
+            display: flex;
+            white-space: nowrap;
+            font-size: 16px;
+            font-weight: 600;
+            padding: 8px 0;
+            --marquee-speed: 15s;
+            --direction:scroll-left
+        }
+
+        /* Text styles */
+        .scrolling-text {
+            display: flex;
+            margin-left: 300px;
+        }
+
+        .scrolling-text-item {
+            padding: 0 30px;
+        }
+
+        /* Apply the animation to the text items */
+        .scrolling-text-inner>div {
+            animation: var(--direction) var(--marquee-speed) linear infinite;
+        }
+
+        /* Pause the animation when a user hovers over it */
+        .scrolling-text-container:hover .scrolling-text-inner>div {
+            animation-play-state: paused;
+        }
+
+        /* Setting the Animation using Keyframes */
+        @keyframes scroll-left {
+            0% {
+                transform: translateX(0%);
+            }
+
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        @keyframes scroll-right {
+            0% {
+                transform: translateX(-100%);
+            }
+
+            100% {
+                transform: translateX(0%);
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -29,7 +95,23 @@
 
     <!--SITE CONTENT STARTS HERE----------------------------------------------------------------------------------->
     <div class="profileFormBlock">
-
+        <img class="decorImage" src="images/spice.png" alt="spice image">
+        <div class="scrolling-text-container">
+            <div class="scrolling-text-inner" role="marquee">
+                <div class="scrolling-text-item">
+                    dive into a world of recipe creation with <b>quisine</b>
+                </div>
+                <div class="scrolling-text-item">
+                    dive into a world of recipe creation with <b>quisine</b>
+                </div>
+                <div class="scrolling-text-item">
+                    dive into a world of recipe creation with <b>quisine</b>
+                </div>
+                <div class="scrolling-text-item">
+                    dive into a world of recipe creation with <b>quisine</b>
+                </div>
+            </div>
+        </div>
 
 
     </div>

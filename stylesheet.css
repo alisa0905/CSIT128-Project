@@ -271,3 +271,13 @@ p{
       border-radius: 50%;
       background: black;
   }
+
+  /*Login/Singup page CSS--------------------------------*/
+  .profileFormBlock{
+    background-color: #FCE4D8;
+    border: 3px solid black;
+    border-radius: 20px;
+    margin:45px;
+    height: 700px;
+    padding: 20px;
+  }
