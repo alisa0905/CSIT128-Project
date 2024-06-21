@@ -15,8 +15,6 @@ textarea {
     box-sizing: border-box;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital@0;1&family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
-
 body {
     background-image: url("images/background.png");
     background-repeat: repeat;
@@ -103,7 +101,7 @@ a {
 }
 
 .funnyLine { /*thing that stores quote*/
-    max-height: 300px;
+    max-height: 2000px;
     width: 100%;
     margin: auto;
     display:block;
@@ -278,6 +276,10 @@ p{
     border: 3px solid black;
     border-radius: 20px;
     margin:45px;
+    margin-left: 80px;
+    margin-right: 80px;
     height: 700px;
     padding: 20px;
+    text-align: center;
+
   }
