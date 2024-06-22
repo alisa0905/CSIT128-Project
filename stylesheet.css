@@ -164,7 +164,7 @@ h1 {
 
 h3{
     font-family: "Satisfy",cursive;
-    font-size: 190%;
+    font-size: 220%;
     font-weight: 100;
 }
 
@@ -283,3 +283,48 @@ p{
     text-align: center;
 
   }
+
+  .pageTitle {
+    margin: auto;
+    max-width: 300px;
+    padding: 15px; 
+    border: 3px solid black;
+    border-radius: 45px;
+    background-color: white;
+    box-shadow: 3px 3px black;
+    text-align: center;
+    font-family:"Poppins", sans-serif;
+    font-weight: 600;
+    font-size: 30px;
+}   
+
+.ovalImage {
+  width:300px;
+  height: 200px;
+  border-radius: 50%;
+  border: 3px solid black;
+  background-size:cover;
+  background-position:center;
+  margin: auto;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.tag{
+  flex: 1;
+  margin:8px;
+  padding: 8px; 
+  border-radius: 45px;
+  background-color: #FF914D;
+  color: white;
+  text-align: center;
+  font-family:"Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.tagWrapper{
+  display: flex;
+  width: 300px;
+  margin: auto;
+}
