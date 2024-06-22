@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Add Recipe</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="stylesheet.css">
+    <link rel="icon" type="image/x-icon" href="images/quisinelogo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital@0;1&family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+
+        .inline-section {
+            display: inline-block;
+            vertical-align: top;
+            margin-right: 20px;
+        }
+        table {
+            width: 100%;
+        }
+        td {
+            padding: 5px;
+        }
+        label{
+            font-family: "Roboto Mono", monospace;
+            font-size: 15px;
+        }
+        input{
+            border: 2px solid black;
+            border-radius: 5px;
+            padding: 5px;
+            font-family:"Poppins", sans-serif;
+        }
+        input[type="submit"], input[type="reset"]{
+            background-color: #D0DB92;
+            padding: 10px 20px;
+            width: 120px;
+            border-radius: 50%;
+            font-size: 16px;
+        }
+
+        input[type="reset"]{
+            background-color: #E0F8E8;
+        }
+
+        input[type="file"]{
+            display: none;
+        }
+
+        .customImgUpload {
+            border: 2px solid black;
+            display: inline-block;
+            padding: 6px 12px;
+            cursor: pointer;
+            border-radius: 10px;
+            font-family:"Poppins", sans-serif;
+            background-color: #D0DB92;
+            margin-bottom: 20px;
+        }
+
+        textarea{
+            border: 2px solid black;
+            border-radius: 20px;
+            min-width: 40px;
+            width:90%;
+            margin-top: 20px;
+            padding:20px;
+        }
+
+        h2{
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <img class="logoImg" src="images/logoAdmin.png">
+
+        <div class="navLinks">
+            <a style="padding:10px 35px;" class="cuteLink" href="ADMINhomepage.html">HOME</a>
+            <a style="background-color: #E0F8E8;" class="cuteLink" href="addRecipePage.html">ADD RECIPE</a> 
+            <a class="cuteLink" href="myRecipes.html">MY RECIPES</a> 
+        </div>
+        <div class="rightIcons">
+        <a href="some js bs"><img class="headerImg" src="images/nightModeIcon.png" alt="nightmode"></a>
+        <a href="registerPage.html"><img class="headerImg" src="images/profileIcon.png" alt="profile icon"></a>
+        </div>
+    </header>
+    <!--SITE CONTENT STARTS HERE----------------------------------------------------------------------------------->
+    <div class="body" style="height:1300px">
+
+        <div class="addRecipeSection">
+            <div class="addRecipeHeaderLine">
+                <h3 class="quoteStorageLine" style="font-size: 40px;">add recipe</h3>
+            </div>
+            <div style="padding:20px;">
+                <form action="">
+                    <h2>recipe name</h2>
+                    <input type="text">
+                    <br><br>
+                    <div class="inline-section">
+                        <div class="section-header"><h2>select tags</h2></div>
+                        <label class="container">dessert
+                            <input type="radio" name="tags" id="dessert">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="container">main course
+                            <input type="radio" name="tags" id="mainCourse">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="container">side dish
+                            <input type="radio" name="tags" id="sideDish">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                    <div class="inline-section">
+                        <div class="section-header"><h2>select cuisine</h2></div>
+                        <label class="container">indian
+                            <input type="radio" name="cuisine" id="indian">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="container">russian
+                            <input type="radio" name="cuisine" id="russian">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="container">greek
+                            <input type="radio" name="cuisine" id="greek">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="container">italian
+                            <input type="radio" name="cuisine" id="italian">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="container">chinese
+                            <input type="radio" name="cuisine" id="chinese">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                    <h2 style="margin-top: 20px;">upload the image for your recipe here</h2>
+                    <label class="customImgUpload" for="img">
+                        <i class="fa fa-cloud-upload"></i> Custom upload
+                    </label>
+                    <input type="file" id="img" name="img" accept="image/*">
+                    <h2>enter your recipe here</h2>
+                    <textarea name="recipeBody" id="recipeBody" rows="30"></textarea>
+                    <br><br>
+                    <input type="submit" value="SAVE">
+                    &ThickSpace;&ThickSpace;
+                    <input type="reset" value="RESET">
+                </form>
+            </div>
+        </div>
+
+        <div class="previewSection">
+          <!--oomf put the preview script stuff here-->  
+        </div>
+    </div>
+</body>
+</html>
