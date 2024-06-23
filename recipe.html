@@ -2,7 +2,7 @@
 <html>
 
 <head>
-<title>Add Recipe</title>
+<title>View Recipe</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="stylesheet.css">
@@ -13,150 +13,98 @@
         @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
 
-        .inline-section {
-            display: inline-block;
-            vertical-align: top;
-            margin-right: 20px;
-        }
-        table {
-            width: 100%;
-        }
-        td {
-            padding: 5px;
-        }
-        label{
-            font-family: "Roboto Mono", monospace;
-            font-size: 15px;
-        }
-        input{
-            border: 2px solid black;
-            border-radius: 5px;
-            padding: 5px;
-            font-family:"Poppins", sans-serif;
-        }
-        input[type="submit"], input[type="reset"]{
-            background-color: #D0DB92;
-            padding: 10px 20px;
-            width: 120px;
-            border-radius: 50%;
-            font-size: 16px;
-        }
-
-        input[type="reset"]{
-            background-color: #E0F8E8;
-        }
-
-        input[type="file"]{
-            display: none;
-        }
-
-        .customImgUpload {
-            border: 2px solid black;
-            display: inline-block;
-            padding: 6px 12px;
-            cursor: pointer;
-            border-radius: 10px;
-            font-family:"Poppins", sans-serif;
-            background-color: #D0DB92;
-            margin-bottom: 20px;
-        }
-
-        textarea{
-            border: 2px solid black;
-            border-radius: 20px;
-            min-width: 40px;
-            width:90%;
-            margin-top: 20px;
-            padding:20px;
-        }
-
         h2{
             font-size: 20px;
         }
+
+        .pageTag{
+            background-color: #D0DB92;
+            border: 2px black solid;
+            color: black;
+            flex: 1;
+            margin:8px;
+            padding: 8px; 
+            border-radius: 45px;
+            text-align: center;
+            font-family:"Poppins", sans-serif;
+            font-weight: 600;
+            font-size: 16px;
+        }
+
+        .pageTagWrapper{
+            display: flex;
+            width: 300px;
+            margin: auto;
+            margin-top: 15px;
+            float:left;
+        }
+
+        .ingredientCard{
+            float:left;
+            width:40%;
+            height: 600px;
+            margin-left: 5%;
+            border: 3px solid black;
+            box-shadow: 3px 3px black;
+            background-color: #E0F8E8;
+            margin-top: 100px;
+        }
+
+        .funnyLine{
+            border:none;
+            border-bottom: 3px solid black;
+            background-color: white;
+            padding: 30px;
+        }
+
     </style>
 </head>
 
 <body>
     <header>
-        <img class="logoImg" src="images/logoAdmin.png">
+        <img class="logoImg" src="images/bigQuisineLogo.png">
 
         <div class="navLinks">
-            <a style="padding:10px 35px;" class="cuteLink" href="ADMINhomepage.html">HOME</a>
-            <a style="background-color: #E0F8E8;" class="cuteLink" href="addRecipePage.html">ADD RECIPE</a> 
-            <a class="cuteLink" href="myRecipes.html">MY RECIPES</a> 
+            <a style="padding:10px 35px;" class="cuteLink" href="homepage.html">HOME</a>
+            <a style="background-color: #E0F8E8;" class="cuteLink" href="addRecipePage.html">RECIPES</a> 
         </div>
         <div class="rightIcons">
         <a href="registerPage.html"><img class="headerImg" src="images/profileIcon.png" alt="profile icon"></a>
         </div>
     </header>
+
+
     <!--SITE CONTENT STARTS HERE----------------------------------------------------------------------------------->
-    <div class="body" style="height:1300px">
-
-        <div class="addRecipeSection">
-            <div class="addRecipeHeaderLine">
-                <h3 class="quoteStorageLine" style="font-size: 40px;">add recipe</h3>
+    <div class="body" style="height:1300px;">
+        <div class="ingredientCard">
+            <div class="funnyLine">
+                <h3>ingredient list</h3>
             </div>
-            <div style="padding:20px;">
-                <form action="">
-                    <h2>recipe name</h2>
-                    <input type="text">
-                    <br><br>
-                    <div class="inline-section">
-                        <div class="section-header"><h2>select tags</h2></div>
-                        <label class="container">dessert
-                            <input type="radio" name="tags" id="dessert">
-                            <span class="checkmark"></span>
-                        </label>
-                        <label class="container">main course
-                            <input type="radio" name="tags" id="mainCourse">
-                            <span class="checkmark"></span>
-                        </label>
-                        <label class="container">side dish
-                            <input type="radio" name="tags" id="sideDish">
-                            <span class="checkmark"></span>
-                        </label>
-                    </div>
-                    <div class="inline-section">
-                        <div class="section-header"><h2>select cuisine</h2></div>
-                        <label class="container">indian
-                            <input type="radio" name="cuisine" id="indian">
-                            <span class="checkmark"></span>
-                        </label>
-                        <label class="container">russian
-                            <input type="radio" name="cuisine" id="russian">
-                            <span class="checkmark"></span>
-                        </label>
-                        <label class="container">greek
-                            <input type="radio" name="cuisine" id="greek">
-                            <span class="checkmark"></span>
-                        </label>
-                        <label class="container">italian
-                            <input type="radio" name="cuisine" id="italian">
-                            <span class="checkmark"></span>
-                        </label>
-                        <label class="container">chinese
-                            <input type="radio" name="cuisine" id="chinese">
-                            <span class="checkmark"></span>
-                        </label>
-                    </div>
-                    <h2 style="margin-top: 20px;">upload the image for your recipe here</h2>
-                    <label class="customImgUpload" for="img">
-                        <i class="fa fa-cloud-upload"></i> Custom upload
-                    </label>
-                    <input type="file" id="img" name="img" accept="image/*">
-                    <h2>enter your recipe here</h2>
-                    <textarea name="recipeBody" id="recipeBody" rows="30"></textarea>
-                    <br><br>
-                    <input type="submit" value="SAVE">
-                    &ThickSpace;&ThickSpace;
-                    <input type="reset" value="RESET">
-                </form>
+            <div class="funnyLine" style="text-align: left;padding: 5px;background-color: #D0DB92;">
+                <b>serving size -</b> 1 person
+            </div>
+            <div style="padding:30px;">
+                sample ingedients
             </div>
         </div>
-
         <div class="previewSection">
-          <!--oomf put the preview script stuff here-->  
-        </div>
+            <div class="pageTitle">
+                RECIPE NAME
+            </div> 
+            <div class="pageTagWrapper">
+                <div class="pageTag">
+                  #main dish
+                </div>
+                <div class="pageTag">
+                  #indian
+                </div>
+            </div>
+        <img style="width: 630px;" src="images/divider line.png" alt="">
+        <h2>INSTRUCTIONS</h2>
+        <br>
+        <p>
+            sample instructions
+        </p>
     </div>
 </body>
 </html>
