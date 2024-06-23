@@ -43,8 +43,6 @@ exports.postAuthentication = function (res, mySess, user_id, body) {
     }
 };
 
-
-
 exports.login = function (res) {
     fs.readFile("loginPage.html", function (err, data) {
         if (err) {
@@ -81,8 +79,6 @@ exports.authenticateUser = function (res, body, mySess, callback) {
     });
 };
 
-const querystring = require('querystring');
-
 exports.handleLogin = function (req, res) {
     let body = '';
     req.on('data', chunk => {
@@ -93,3 +89,33 @@ exports.handleLogin = function (req, res) {
         authenticateUser(res, formData);
     });
 };
+
+exports.addRecipe = function (res, mySess, body) {
+    console.log("Adding recipe:", body);
+    const { recipeTitle, ingredients, cookingTime, servingSize, tags, cuisine, image, recipeBody } = body;
+    const user_id = mySess.getMySession().user_id;
+
+    if (!user_id) {
+        console.error("User not authenticated");
+        res.writeHead(302, { 'Location': '/loginPage' });
+        return res.end();
+    }
+
+    const sql = "INSERT INTO recipes (user_id, title, ingredients, cooking_time, serving_size, tags, cuisine, image, instructions) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+    con.query(sql, [user_id, recipeTitle, ingredients, cookingTime, servingSize, tags, cuisine, image, recipeBody], function (err, result) {
+        if (err) {
+            console.error("Database insert error:", err);
+            res.writeHead(500, { 'Content-Type': 'text/plain' });
+            return res.end('Internal Server Error');
+        }
+        console.log("Recipe added successfully");
+        res.writeHead(302, { 'Location': '/myRecipes.html' });
+        res.end();
+    });
+};
+
+exports.getMySession = function () {
+    return mySession;
+};
+
+

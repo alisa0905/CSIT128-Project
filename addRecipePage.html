@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital@0;1&family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
 
         .inline-section {
@@ -93,65 +93,66 @@
                 <h3 class="quoteStorageLine" style="font-size: 40px;">add recipe</h3>
             </div>
             <div style="padding:20px;">
-                <form action="">
+                <form action="/addRecipe" method="post">
                     <h2>recipe title</h2>
-                    <input type="text" name="recipeTitle" id="recipeTitle">
+                    <input type="text" name="recipeTitle" id="recipeTitle" required>
                     <br>
                     <h2>ingredients</h2>
-                    <input type="text" name="ingredients" id="ingredients">
+                    <input type="text" name="ingredients" id="ingredients" required>
                     <br>
                     <h2>cooking time</h2>
-                    <input type="text" name="cookingTime" id="cookingTime">
+                    <input type="text" name="cookingTime" id="cookingTime" required>
                     <h2>serving size</h2>
-                    <input type="text" name="servingSize" id="servingSize">
+                    <input type="text" name="servingSize" id="servingSize" required>
                     <br><br>
                     <div class="inline-section">
                         <div class="section-header"><h2>select tags</h2></div>
                         <label class="container">dessert
-                            <input type="radio" name="tags" id="dessert">
+                            <input type="radio" name="tags" value="dessert" id="dessert" required>
                             <span class="checkmark"></span>
                         </label>
                         <label class="container">main course
-                            <input type="radio" name="tags" id="mainCourse">
+                            <input type="radio" name="tags" value="mainCourse" id="mainCourse" required>
                             <span class="checkmark"></span>
                         </label>
                         <label class="container">side dish
-                            <input type="radio" name="tags" id="sideDish">
+                            <input type="radio" name="tags" value="sideDish" id="sideDish" required>
                             <span class="checkmark"></span>
                         </label>
                     </div>
                     <div class="inline-section">
                         <div class="section-header"><h2>select cuisine</h2></div>
                         <label class="container">indian
-                            <input type="radio" name="cuisine" id="indian">
+                            <input type="radio" name="cuisine" value="indian" id="indian" required>
                             <span class="checkmark"></span>
                         </label>
                         <label class="container">russian
-                            <input type="radio" name="cuisine" id="russian">
+                            <input type="radio" name="cuisine" value="russian" id="russian" required>
                             <span class="checkmark"></span>
                         </label>
                         <label class="container">greek
-                            <input type="radio" name="cuisine" id="greek">
+                            <input type="radio" name="cuisine" value="greek" id="greek" required>
                             <span class="checkmark"></span>
                         </label>
                         <label class="container">italian
-                            <input type="radio" name="cuisine" id="italian">
+                            <input type="radio" name="cuisine" value="italian" id="italian" required>
                             <span class="checkmark"></span>
                         </label>
                         <label class="container">chinese
-                            <input type="radio" name="cuisine" id="chinese">
+                            <input type="radio" name="cuisine" value="chinese" id="chinese" required>
                             <span class="checkmark"></span>
                         </label>
                     </div>
                     <h2 style="margin-top: 20px;">paste your image address link here</h2>
-                    <input style="width: 300px;"type="text" name="image" id="img">
+                    <input style="width: 300px;" type="text" name="image" id="img" required>
                     <h2>enter your instructions here</h2>
-                    <textarea name="recipeBody" id="recipeBody" rows="30"></textarea>
+                    <textarea name="recipeBody" id="recipeBody" rows="30" required></textarea>
                     <br><br>
                     <input type="submit" value="SAVE">
                     &ThickSpace;&ThickSpace;
                     <input type="reset" value="RESET">
                 </form>
+                
             </div>
         </div>
 
