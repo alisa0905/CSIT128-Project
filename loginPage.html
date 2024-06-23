@@ -2,11 +2,13 @@
 <html>
 
 <head>
-<title>Sign Up</title>
+<title>Log in</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="stylesheet.css">
     <link rel="icon" type="image/x-icon" href="images/quisinelogo.png">
+    <script src="module.js"></script>
+    <script src="logon.js"></script>
 
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital@0;1&family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
@@ -155,20 +157,22 @@
             <h3>log in</h3>
             <br>
             <div>
-                <form action="login" method="POST">
+                <form action="/loginPage" method="POST">
+                    <div id="demo_error_message"></div>
                     <table>
                         <tr>
-                            <td><input type="text" name="" id="" placeholder="username"></td>
+                            <td><input type="text" name="username" id="username" placeholder="username"></td>
                         </tr>
                         <tr>
-                            <td><input type="text" name="" id="" placeholder="password"></td>
+                            <td><input type="text" name="password" id="password" placeholder="password"></td>
                         </tr>
                     </table>
                     <br>
-                        <input type="submit" value="log in">
-                        <br>
-                        <a style="font-size: 15px;" href="registerPage.html"><u>or sign up here</u></a>
+                    <input type="submit" value="log in">
+                    <br>
+                    <a style="font-size: 15px;" href="registerPage.html"><u>or sign up here</u></a>
                 </form>
+                
             </div>
         </div>
         <div style="float:right;width:55%;margin-top: 180px;">

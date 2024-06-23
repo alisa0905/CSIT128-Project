@@ -1,23 +1,22 @@
-const session = require('express-session');
-var mySession;
+let mySession = {};
 
 exports.setMySession = function (username) {
-    session.userName = username;
-    mySession = session;
+    mySession.userName = username;
     console.log("Session Created.");
 };
 
 exports.setUserIdSession = function (user_id) {
-    session.user_id = user_id;
-    mySession = session;
+    mySession.user_id = user_id;
     console.log("User session Created.");
 };
 
-exports.getMySession = function(){
+// Getter for session data
+exports.getMySession = function () {
     return mySession;
 };
 
+// Function to delete session data
 exports.deleteSession = function () {
-    mySession = "";
+    mySession = {}; // Clear all session data
     console.log("Session Deleted.");
-}
+};

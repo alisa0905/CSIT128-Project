@@ -3,33 +3,46 @@ var fs = require('fs');
 var con;
 
 exports.connectToDB = function () {
-    var con = mysql.createConnection({
-        ost: "localhost",
+    con = mysql.createConnection({
+        host: "localhost",
         user: "root",
-        password: "root",
-        port: 3300,
-        database: "csit128_example"
+        password: "password",
+        database: "csit128_project"
     });
-    return con
+
+    con.connect(function(err) {
+        if (err) throw err;
+        console.log("Connected to database!");
+    });
+
+    return con;
 };
 
 exports.postAuthentication = function (res, mySess, user_id, body) {
-    if (user_id != -1 && user_id != "" && user_id != undefined) {
+    if (user_id != -1 && user_id) {
         mySess.setMySession(body.username);
         mySess.setUserIdSession(user_id);
         s = mySess.getMySession();
-        if (s.user_id != "" && s.user_id != undefined) {
-            fs.readFile("homepage.html", function (err, data) {
-                res.writeHead(200, { 'Content-Type': 'text/html' });
-                res.write(data);
-                return res.end();
-            });
+        if (s.user_id) {
+            res.writeHead(302, { 'Location': '/myRecipes.html' });
+            return res.end();
         }
+    } else {
+        fs.readFile("loginPage.html", function (err, data) {
+            if (err) {
+                res.writeHead(404, { 'Content-Type': 'text/html' });
+                return res.end("404 Not Found");
+            }
+            res.writeHead(200, { 'Content-Type': 'text/html' });
+            res.write(data + "<script>document.getElementById('demo_error_message').innerHTML = 'You have entered an incorrect username or password!';</script>");
+            return res.end();
+        });
     }
-}
+};
+
 
 exports.login = function (res) {
-    fs.readFile("loginpage.html", function (err, data) {
+    fs.readFile("loginPage.html", function (err, data) {
         if (err) {
             res.writeHead(404, { 'Content-Type': 'text/html' });
             return res.end("404 Not Found");
@@ -40,29 +53,36 @@ exports.login = function (res) {
     });
 };
 
-exports.authenticateUser = function (res, body, mySess, myCallback) {
-    var Username = body.username;
-    var Password = body.password;
-    // Connect to the database.
+exports.authenticateUser = function (res, body, mySess, callback) {
+    const username = body.username;
+    const password = body.password;
+    
     con = this.connectToDB();
-    con.connect(function (err) {
+
+    const sql = "SELECT * FROM user WHERE user_username = ? AND user_password = ?";
+    con.query(sql, [username, password], function (err, result) {
         if (err) throw err;
-        // Get employee record.
-        var sql = "SELECT * from employee WHERE emp_username = '" + Username + "' AND emp_password = '" + Password + "'";
-        con.query(sql, function (err, result) {
-            if (err) throw err;
-            if (result !== undefined && result.length > 0) {
-                myCallback(res, mySess, result[0].emp_id, body);
-            }
-            else {
-                // show error message on the login page.
-                    var message = "<script>document.getElementById(\"demo_error_message\").innerHTML = \"You have entered an incorrect username or password!\";</script> ";
-                    fs.readFile("login.html", function (err, data) {
-                        res.writeHead(200, { 'Content-Type': 'text/html' });
-                        res.write(data);
-                        return res.end(message);                       
-                    });
-            }      
-     });
+        
+        if (result.length > 0) {
+            callback(res, mySess, result[0].user_id, body);
+        } else {
+            // Redirect to login page with error message
+            res.writeHead(302, { 'Location': '/loginPage?error=1' });
+            res.end();
+        }
+    });
+};
+
+
+const querystring = require('querystring');
+
+exports.handleLogin = function (req, res) {
+    let body = '';
+    req.on('data', chunk => {
+        body += chunk.toString(); // Convert Buffer to string
+    });
+    req.on('end', () => {
+        const formData = querystring.parse(body);
+        authenticateUser(res, formData);
     });
 };

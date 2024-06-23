@@ -10,7 +10,7 @@ http.createServer(function (req, res) {
     var body = '';
     var s;
 
-    if (req.url == "/login") {
+    if (req.url == "/loginPage") {
 
         // read chunks of POST data
         req.on('data', chunk => {
@@ -25,20 +25,20 @@ http.createServer(function (req, res) {
             // Authonticate user credentials.
         });
 
-    } else if (req.url == "/myprofile") {
+    } else if (req.url == "/myRecipes") {
         s = mySess.getMySession();
         if (s !== undefined) {
-            if (s.userName != "" && s.userName !== undefined) {
+            if (s.user_username != "" && s.user_username !== undefined) {
                 myModule.getEmployee(res, s, myModule.navigateToUserProfile);                 
             }
         } else {
             // Redirect to the login page.
-            myModule.login(res);
+            myModule.loginPage(res);
         }
     } else if (req.url == "/logout") {
         s = mySess.getMySession();
         if (s !== undefined) {
-            if (s.userName != "" && s.userName !== undefined) {
+            if (s.user_username != "" && s.user_username !== undefined) {
                 mySess.deleteSession();
             }
         } else {
@@ -46,35 +46,35 @@ http.createServer(function (req, res) {
             myModule.login(res);
         }
         myModule.logout(res);     
-    } else if (req.url == "/home") { 
+    } else if (req.url == "/homepage") { 
             
         s = mySess.getMySession();      
         if (s !== undefined) {
-            if (s.userName != "" && s.userName !== undefined) {
+            if (s.user_username != "" && s.user_username !== undefined) {
                 myModule.navigateToHome(res,s);
             }
         } else {
             // Redirect to the login page.
             myModule.login(res);
         }
-    } else if (req.url == "/title" || req.url == "/title?" ) { 
+    } else if (req.url == "/recipe" || req.url == "/recipe?" ) { 
         s = mySess.getMySession();
         if (s !== undefined) {
-            if (s.userName != "" && s.userName !== undefined) {
+            if (s.user_username != "" && s.user_username !== undefined) {
                 myModule.getTitles(res, s, myModule.navigateToTitle);
             }
         }
-    } else if (req.url == "/add_title?") {  
+    } else if (req.url == "/addRecipePage?") {  
         s = mySess.getMySession();
         if (s !== undefined) {
-            if (s.userName != "" && s.userName !== undefined) {
+            if (s.user_username != "" && s.user_username !== undefined) {
                 myModule.navigateToAddTitle(res, s);
             }
         }
-    } else if (req.url.indexOf("/add_title_record") >= 0) {        
+    } else if (req.url.indexOf("/addRecipe") >= 0) {        
         s = mySess.getMySession();
         if (s !== undefined) {
-            if (s.userName != "" && s.userName !== undefined) {
+            if (s.user_username != "" && s.user_username !== undefined) {
                 var q = url.parse(req.url, true).query;
                 myModule.addTitle(res, s, q.titleDesc, q.titleStartDate, myModule.navigateToAddTitle);
             }
