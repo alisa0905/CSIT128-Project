@@ -345,6 +345,9 @@ p{
   box-shadow:  0 3px black;
 }
 
+button:hover{
+  box-shadow:  0 3px black;
+}
 
 .pageTagWrapper{
   display: flex;
