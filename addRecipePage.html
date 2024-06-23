@@ -86,12 +86,11 @@
             <a class="cuteLink" href="myRecipes.html">MY RECIPES</a> 
         </div>
         <div class="rightIcons">
-        <a href="some js bs"><img class="headerImg" src="images/nightModeIcon.png" alt="nightmode"></a>
         <a href="registerPage.html"><img class="headerImg" src="images/profileIcon.png" alt="profile icon"></a>
         </div>
     </header>
     <!--SITE CONTENT STARTS HERE----------------------------------------------------------------------------------->
-    <div class="body" style="height:1300px">
+    <div class="body" style="height:1405px">
 
         <div class="addRecipeSection">
             <div class="addRecipeHeaderLine">
@@ -99,8 +98,16 @@
             </div>
             <div style="padding:20px;">
                 <form action="">
-                    <h2>recipe name</h2>
-                    <input type="text">
+                    <h2>recipe title</h2>
+                    <input type="text" name="recipeTitle" id="recipeTitle">
+                    <br>
+                    <h2>ingredients</h2>
+                    <input type="text" name="ingredients" id="ingredients">
+                    <br>
+                    <h2>cooking time</h2>
+                    <input type="text" name="cookingTime" id="cookingTime">
+                    <h2>serving size</h2>
+                    <input type="text" name="servingSize" id="servingSize">
                     <br><br>
                     <div class="inline-section">
                         <div class="section-header"><h2>select tags</h2></div>
@@ -145,7 +152,7 @@
                         <i class="fa fa-cloud-upload"></i> Custom upload
                     </label>
                     <input type="file" id="img" name="img" accept="image/*">
-                    <h2>enter your recipe here</h2>
+                    <h2>enter your instructions here</h2>
                     <textarea name="recipeBody" id="recipeBody" rows="30"></textarea>
                     <br><br>
                     <input type="submit" value="SAVE">
