@@ -1,40 +1,36 @@
 var http = require('http');
 var url = require('url');
 var fs = require('fs');
-var myModule = require('./module')
+var myModule = require('./module');
 var mySess = require('./session')
 querystring = require('querystring');
 
 
 http.createServer(function (req, res) {
-    var body = '';
     var s;
 
-    if (req.url == "/loginPage") {
-
-        // read chunks of POST data
+    if (req.url == "/loginPage" && req.method == "POST") {
+        let body = '';
         req.on('data', chunk => {
             body += chunk.toString();
         });
-
-        // when complete POST data is received
         req.on('end', () => {
-            // use parse() method
             body = querystring.parse(body);
-
-            // Authonticate user credentials.
+            myModule.authenticateUser(res, body, mySess, myModule.postAuthentication);
         });
+    
 
-    } else if (req.url == "/myRecipes") {
-        s = mySess.getMySession();
-        if (s !== undefined) {
-            if (s.user_username != "" && s.user_username !== undefined) {
-                myModule.getEmployee(res, s, myModule.navigateToUserProfile);                 
-            }
-        } else {
-            // Redirect to the login page.
-            myModule.loginPage(res);
-        }
+    }else if (req.url == "/myRecipes.html") {
+            fs.readFile("myRecipes.html", function (err, data) {
+                if (err) {
+                    res.writeHead(404, { 'Content-Type': 'text/html' });
+                    return res.end("404 Not Found");
+                }
+                res.writeHead(200, { 'Content-Type': 'text/html' });
+                res.write(data);
+                return res.end();
+            });
+        
     } else if (req.url == "/logout") {
         s = mySess.getMySession();
         if (s !== undefined) {
@@ -46,7 +42,7 @@ http.createServer(function (req, res) {
             myModule.login(res);
         }
         myModule.logout(res);     
-    } else if (req.url == "/homepage") { 
+    } else if (req.url == "/homepage.html") { 
             
         s = mySess.getMySession();      
         if (s !== undefined) {
@@ -83,4 +79,4 @@ http.createServer(function (req, res) {
         // Login page.
         myModule.login(res);
     }
-}).listen(8080);
+}).listen(6060);

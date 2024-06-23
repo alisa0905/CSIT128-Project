@@ -14,15 +14,28 @@ http.createServer(function (req, res) {
         
             req.on('data', chunk => {
                 body += chunk.toString();
+                console.log("Received chunk:", chunk.toString());
             });
 
             req.on('end', () => {
-                body = querystring.parse(body);
-                myModule.authenticateUser(res, body, mySess, myModule.postAuthentication);
+                const formData = querystring.parse(body);
+                console.log("Parsed form data:", formData);
+                myModule.authenticateUser(res, formData, mySess, myModule.postAuthentication);
             });
         } else {
             myModule.login(res); // Serve login page for GET requests
         }
+    } else if (path === '/myRecipes.html') {
+        // Serve myRecipes.html
+        fs.readFile("myRecipes.html", function (err, data) {
+            if (err) {
+                res.writeHead(404, { 'Content-Type': 'text/html' });
+                return res.end("404 Not Found");
+            }
+            res.writeHead(200, { 'Content-Type': 'text/html' });
+            res.write(data);
+            return res.end();
+        });
     } else {
         // Serve login page for any other route
         myModule.login(res);
