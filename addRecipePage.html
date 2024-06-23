@@ -46,20 +46,6 @@
             background-color: #E0F8E8;
         }
 
-        input[type="file"]{
-            display: none;
-        }
-
-        .customImgUpload {
-            border: 2px solid black;
-            display: inline-block;
-            padding: 6px 12px;
-            cursor: pointer;
-            border-radius: 10px;
-            font-family:"Poppins", sans-serif;
-            background-color: #D0DB92;
-            margin-bottom: 20px;
-        }
 
         textarea{
             border: 2px solid black;
@@ -73,6 +59,15 @@
         h2{
             font-size: 20px;
         }
+
+        button {
+            text-decoration: none;
+            font-family: "Poppins", sans-serif;
+            font-weight: 500;
+            font-style: normal;
+            color: black;
+            font-size: 16px;
+        }
     </style>
 </head>
 
@@ -81,11 +76,12 @@
         <img class="logoImg" src="images/logoAdmin.png">
 
         <div class="navLinks">
-            <a style="padding:10px 35px;" class="cuteLink" href="ADMINhomepage.html">HOME</a>
             <a style="background-color: #E0F8E8;" class="cuteLink" href="addRecipePage.html">ADD RECIPE</a> 
             <a class="cuteLink" href="myRecipes.html">MY RECIPES</a> 
+            <button type="button" class="cuteLink" style="background-color: #FF914D;">LOG OUT</button>
         </div>
         <div class="rightIcons">
+        <h2>hello username</h2>
         <a href="registerPage.html"><img class="headerImg" src="images/profileIcon.svg" alt="profile icon"></a>
         </div>
     </header>
@@ -147,11 +143,8 @@
                             <span class="checkmark"></span>
                         </label>
                     </div>
-                    <h2 style="margin-top: 20px;">upload the image for your recipe here</h2>
-                    <label class="customImgUpload" for="img">
-                        <i class="fa fa-cloud-upload"></i> Custom upload
-                    </label>
-                    <input type="file" id="img" name="img" accept="image/*">
+                    <h2 style="margin-top: 20px;">paste your image address link here</h2>
+                    <input style="width: 300px;"type="text" name="image" id="img">
                     <h2>enter your instructions here</h2>
                     <textarea name="recipeBody" id="recipeBody" rows="30"></textarea>
                     <br><br>
