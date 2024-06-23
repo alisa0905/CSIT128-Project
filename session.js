@@ -7,10 +7,10 @@ exports.setMySession = function (username) {
     console.log("Session Created.");
 };
 
-exports.setUserIdSession = function (empId) {
-    session.empId = empId;
+exports.setUserIdSession = function (user_id) {
+    session.user_id = user_id;
     mySession = session;
-    console.log("Employee ID Session Created.");
+    console.log("User session Created.");
 };
 
 exports.getMySession = function(){
