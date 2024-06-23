@@ -1,0 +1,15 @@
+INSERT INTO user (user_id, user_name, user_email, user_username, user_password) 
+VALUES (1, 'alisa', 'alisa@gmail.com', 'alisa', 'alisa12345');
+
+INSERT INTO csit128_project.recipes 
+    (recipe_id, recipe_name, recipe_content, recipe_tag1, recipe_tag2, recipe_ingredients, recipe_cookingtime, recipe_servingsize, recipe_user) 
+VALUES 
+    (1,
+    'Tomato Rice', 
+     '<h2>INSTRUCTIONS</h2><br><p><strong>Preparation</strong></p><ol><li>Wash 1½ cups rice very well until water runs clear. Soak if desired, then drain.</li><li>Slice 1 onion, chop 1 green chili (optional), and puree 2-3 tomatoes. Grate or crush ½ inch ginger & 2 garlic cloves.</li></ol><p><strong>Cooking</strong></p><ol><li>Heat 2 tbsp ghee/oil, fry cashews until golden, set aside. Add spices (cinnamon, cloves, bay leaf, cardamoms, cumin).</li><li>Saute onion and green chili until golden, add ginger garlic paste.</li><li>Add tomatoes, turmeric, salt. Cook until tomatoes are mushy.</li><li>Add red chili powder, garam masala. Saute until fragrant.</li><li>Add water, bring to boil. Add rice, cook until done.</li><li>Let pressure release naturally, fluff rice, add lemon juice, coriander leaves, cashews. Serve hot.</li></ol>', 
+     'main_dish', 
+     'indian', 
+     '1 ½ cups aged basmati rice\n2 tbsp oil or ghee\n1 medium onion\n1 green chili (optional)\n1 tbsp ginger garlic paste\n1 cup chopped tomatoes\n¾ tsp salt\n¾ to 1 tsp garam masala\n½ to 1 tsp red chili powder\n¼ tsp turmeric\n2 ½ cups water (cooker), 3 cups (pot)\n3 tbsp coriander leaves\n1 tbsp lemon juice (optional)\n12 whole cashew nuts', 
+     30, 
+     1, 
+     1);

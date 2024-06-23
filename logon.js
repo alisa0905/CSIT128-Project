@@ -75,8 +75,40 @@ http.createServer(function (req, res) {
                 myModule.addTitle(res, s, q.titleDesc, q.titleStartDate, myModule.navigateToAddTitle);
             }
         }
+    } else if (req.url == "/myRecipes.html") {
+        fs.readFile("myRecipes.html", function (err, data) {
+            if (err) {
+                res.writeHead(404, { 'Content-Type': 'text/html' });
+                return res.end("404 Not Found");
+            }
+            let html = data.toString();
+            let session = mySess.getMySession();
+            if (session && session.user_username) {
+                html = html.replace("hello username", `Hello, ${session.user_username}`);
+            }
+            res.writeHead(200, { 'Content-Type': 'text/html' });
+            res.write(html);
+            return res.end();
+        });
+    } else if (req.url == "/addRecipePage.html") {
+        fs.readFile("addRecipePage.html", function (err, data) {
+            if (err) {
+                res.writeHead(404, { 'Content-Type': 'text/html' });
+                return res.end("404 Not Found");
+            }
+            let html = data.toString();
+            let session = mySess.getMySession();
+            if (session && session.user_username) {
+                html = html.replace("hello username", `Hello, ${session.user_username}`);
+            }
+            res.writeHead(200, { 'Content-Type': 'text/html' });
+            res.write(html);
+            return res.end();
+        });
+    
     } else {
         // Login page.
         myModule.login(res);
     }
+    
 }).listen(6060);

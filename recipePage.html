@@ -107,10 +107,10 @@
                 RECIPE LIST
             </div>
             <div style="float: right;">
-              <form class="search" action="" style="margin-right: 100px;">
-                <input type="text" placeholder="Search.." name="search" class="searchButton">
+              <form class="search" action="/search" method="GET">
+                <input type="text" placeholder="Search.." name="query" class="searchButton">
                 <button type="submit"><i class="fa fa-search"></i></button>
-              </form>
+            </form>            
             </div>
             <br><br>
             <table>
@@ -135,9 +135,10 @@
                             </div>
                         </td>
                         <td>
-                          <form action="">
+                          <form action="/recipe" method="get">
+                            <input type="hidden" name="id" value="1">
                             <button type="submit" class="see-recipe">See Recipe</button>
-                          </form>
+                          </form>                        
                         </td>
                     </tr>
                     <tr>
@@ -152,9 +153,10 @@
                         </div>
                         </td>
                         <td>
-                          <form action="">
+                          <form action="/recipe" method="get">
+                            <input type="hidden" name="id" value="2">
                             <button type="submit" class="see-recipe">See Recipe</button>
-                          </form>
+                          </form>   
                         </td>
                     </tr>
                     <tr>
@@ -169,9 +171,10 @@
                         </div>
                         </td>
                         <td>
-                          <form action="">
+                          <form action="/recipe" method="get">
+                            <input type="hidden" name="id" value="3">
                             <button type="submit" class="see-recipe">See Recipe</button>
-                          </form>
+                          </form>   
                         </td>
                     </tr>
                     <tr>
@@ -186,9 +189,10 @@
                         </div>
                         </td>
                         <td>
-                          <form action="">
+                          <form action="/recipe" method="get">
+                            <input type="hidden" name="id" value="4">
                             <button type="submit" class="see-recipe">See Recipe</button>
-                          </form>
+                          </form>   
                         </td>
                     </tr>
                     <tr>
@@ -196,9 +200,10 @@
                         <td>Payasam</td>
                         <td></td>
                         <td>
-                          <form action="">
+                          <form action="/recipe" method="get">
+                            <input type="hidden" name="id" value="5">
                             <button type="submit" class="see-recipe">See Recipe</button>
-                          </form>
+                          </form>   
                         </td>
                     </tr>
                     <tr>
@@ -206,9 +211,10 @@
                         <td>Borscht</td>
                         <td></td>
                         <td>
-                          <form action="">
+                          <form action="/recipe" method="get">
+                            <input type="hidden" name="id" value="6">
                             <button type="submit" class="see-recipe">See Recipe</button>
-                          </form>
+                          </form>   
                         </td>
                     </tr>
                 </tbody>

@@ -17,7 +17,7 @@ con.connect(function (err) {
     "user_password VARCHAR(50))";
     var recipe_table = "CREATE TABLE IF NOT EXISTS csit128_project.recipes (recipe_id INT PRIMARY KEY, " + 
     "recipe_name VARCHAR(50), " +
-    "recipe_content VARCHAR(1000), " +
+    "recipe_content VARCHAR(2000), " +
     "recipe_tag1 VARCHAR(50), " +
     "recipe_tag2 VARCHAR(50), " +
     "recipe_image LONGBLOB, " +
