@@ -168,7 +168,7 @@ h3{
     font-weight: 100;
 }
 
-p{
+p,ol{
     font-family: "Roboto Mono", monospace;
 }
 
@@ -181,7 +181,7 @@ p{
     width:50%;
     height: 100%;
     max-height: auto;
-    padding: 25px;
+    padding: 40px;
 }
 
 .addRecipeSection{
@@ -323,7 +323,7 @@ p{
   display: flex;
   justify-content: center;
   gap: 10px;
-  width: 300px;
+  width: 400px;
   margin: auto;
 }
 
@@ -360,7 +360,7 @@ button:hover{
 .ingredientCard{
   float:left;
   width:40%;
-  height: 600px;
+  height: 800px;
   margin-left: 5%;
   border: 3px solid black;
   box-shadow: 3px 3px black;
